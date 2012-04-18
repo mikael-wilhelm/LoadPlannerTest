@@ -39,7 +39,7 @@ public class RegisterLoadTest {
         element.click();
         element = driver.findElement(By.id("linkForm:showLoads"));
         element.click();
-        element = driver.findElement(By.xpath("//td[contains(.,'Colrsrsr')]"));
+        element = driver.findElement(By.xpath("//td[contains(.,'Cole')]"));
 
         assertNotNull(element);
 
