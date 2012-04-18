@@ -21,7 +21,7 @@ public class RegisterLoadTest {
         FirefoxProfile profile = new FirefoxProfile();
 
         driver = new FirefoxDriver(new FirefoxBinary(new File("C:\\tools\\Firefox/firefox.exe")), profile);
-        driver.get("http://localhost:8080");
+        driver.get("http://localhost:8080/LoadPlannerMain-1.0-SNAPSHOT");
     }
 
     @Test

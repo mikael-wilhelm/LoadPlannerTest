@@ -1,0 +1,10 @@
+127.0.0.1 - - [18/Apr/2012:10:09:15 +0200] "GET /cargocpc/index.html HTTP/1.1" 200 124
+0:0:0:0:0:0:0:1 - - [18/Apr/2012:10:09:23 +0200] "GET /LoadPlannerMain-1.0-SNAPSHOT HTTP/1.1" 302 -
+0:0:0:0:0:0:0:1 - - [18/Apr/2012:10:09:23 +0200] "GET /LoadPlannerMain-1.0-SNAPSHOT/ HTTP/1.1" 200 2487
+0:0:0:0:0:0:0:1 - - [18/Apr/2012:10:09:23 +0200] "GET /LoadPlannerMain-1.0-SNAPSHOT/faces/javax.faces.resource/jsf.js?ln=javax.faces HTTP/1.1" 200 29225
+0:0:0:0:0:0:0:1 - - [18/Apr/2012:10:09:23 +0200] "GET /favicon.ico HTTP/1.1" 404 -
+0:0:0:0:0:0:0:1 - - [18/Apr/2012:10:09:23 +0200] "GET /favicon.ico HTTP/1.1" 404 -
+0:0:0:0:0:0:0:1 - - [18/Apr/2012:10:09:23 +0200] "GET /favicon.ico HTTP/1.1" 404 -
+0:0:0:0:0:0:0:1 - - [18/Apr/2012:10:09:23 +0200] "POST /LoadPlannerMain-1.0-SNAPSHOT/faces/mainPage.xhtml;jsessionid=64BAA0AEEBE002B5419B67BE8808B9BE HTTP/1.1" 200 3286
+0:0:0:0:0:0:0:1 - - [18/Apr/2012:10:09:24 +0200] "POST /LoadPlannerMain-1.0-SNAPSHOT/faces/mainPage.xhtml HTTP/1.1" 200 3274
+0:0:0:0:0:0:0:1 - - [18/Apr/2012:10:09:24 +0200] "POST /LoadPlannerMain-1.0-SNAPSHOT/faces/mainPage.xhtml HTTP/1.1" 200 2694
