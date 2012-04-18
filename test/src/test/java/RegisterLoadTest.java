@@ -21,9 +21,8 @@ public class RegisterLoadTest {
     @Before
     public void dummyTest(){
 
-        FirefoxProfile firefoxProfile = new FirefoxProfile();
 
-        driver = new FirefoxDriver(new FirefoxBinary(new File("/usr/lib/firefox-11.0/firefox.sh")),firefoxProfile);
+        driver = new FirefoxDriver();
         driver.get("http://localhost:8080/LoadPlannerMain-1.0-SNAPSHOT");
     }
 
@@ -40,7 +39,7 @@ public class RegisterLoadTest {
         element.click();
         element = driver.findElement(By.id("linkForm:showLoads"));
         element.click();
-        element = driver.findElement(By.xpath("//td[contains(.,'Cole')]"));
+        element = driver.findElement(By.xpath("//td[contains(.,'Col')]"));
 
         assertNotNull(element);
 
