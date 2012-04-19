@@ -1,3 +1,7 @@
+package acceptanceTests;
+
+import acceptanceTestHelper.RegisterLoad;
+import asserters.AssertTextWasFound;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -10,9 +14,11 @@ import org.openqa.selenium.firefox.FirefoxProfile;
 import sun.awt.color.ProfileActivator;
 
 import java.io.File;
+import java.util.ArrayList;
 
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertThat;
 
 
 public class RegisterLoadTest {
@@ -28,22 +34,19 @@ public class RegisterLoadTest {
 
     @Test
     public void registerLoadTest(){
-
-
-        WebElement element = driver.findElement(By.id("linkForm:administrateLoadLink"));
+        String actualContent = "Cole";
+        String actualHarbor ="Stockholm";
+        String actualDestination = "Helsingfors";
+        WebElement element = driver.findElement(By.linkText("Administrate Loads"));
         element.click();
-        element = driver.findElement(By.id("registerLoadForm:contentInput"));
-        element.clear();
-        element.sendKeys("Cole");
-        element = driver.findElement(By.id("registerLoadForm:registerLoadButton")) ;
+        //SUT
+        RegisterLoad.registerLoad(driver, actualContent, actualHarbor, actualDestination);
+        element = driver.findElement(By.linkText("Show Loads"));
         element.click();
-        element = driver.findElement(By.id("linkForm:showLoads"));
-        element.click();
-        element = driver.findElement(By.xpath("//td[contains(.,'Cole')]"));
 
-        assertNotNull(element);
-
+        AssertTextWasFound.assertTextWasFound(driver,actualContent,actualHarbor,actualDestination);
     }
+
 
     @After
     public void tearDownTest(){
