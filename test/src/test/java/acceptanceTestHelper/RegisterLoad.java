@@ -16,7 +16,6 @@ public class RegisterLoad {
         element = driver.findElement(By.id("registerLoadForm:destinationInput"));
         element.clear();
         element.sendKeys(destination);
-
         element = driver.findElement(By.id("registerLoadForm:registerLoadButton")) ;
         element.click();
     }

@@ -2,6 +2,7 @@ package acceptanceTests;
 
 
 import acceptanceTestHelper.RegisterLoad;
+import acceptanceTestHelper.SignIn;
 import asserters.AssertTextWasFound;
 import org.junit.After;
 import org.junit.Before;
@@ -30,6 +31,8 @@ public class ReserveLoadTest {
         String actualContent = "reservableContent";
         String actualHarbor ="Stockholm";
         String actualDestination = "Helsingfors";
+
+        SignIn.signIn(driver);
 
         WebElement element = driver.findElement(By.linkText("Administrate Loads"));
         element.click();
