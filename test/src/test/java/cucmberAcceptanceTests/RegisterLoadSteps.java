@@ -1,17 +1,16 @@
 package cucmberAcceptanceTests;
-import static org.hamcrest.core.Is.is;
-import static org.junit.Assert.assertThat;
+
 
 import acceptanceTestHelper.RegisterLoad;
 import acceptanceTestHelper.ReserveLoad;
 import acceptanceTestHelper.SignIn;
 import asserters.AssertTextWasFound;
 import cucumber.annotation.After;
-import cucumber.annotation.Before;
 import cucumber.annotation.en.Given;
 import cucumber.annotation.en.Then;
 import cucumber.annotation.en.When;
 import databaseWrapper.DatabaseWrapper;
+import cucumber.annotation.Before;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -20,8 +19,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import java.net.URISyntaxException;
 import java.sql.SQLException;
 
-public class ReserveLoadSteps {
-
+public class RegisterLoadSteps {
     private WebDriver driver;
     String actualContent;
     String actualHarbor;
@@ -38,10 +36,13 @@ public class ReserveLoadSteps {
         DatabaseWrapper.clearAllLoads();
     }
 
-    @Given("^a load with content coal$")
-    public void registerLoad() throws Exception{
+    @Given("^you are logged in$")
+    public void logIn(){
         SignIn.signIn(driver);
+    }
 
+    @When("^you register a load$")
+    public void reserveLoad(){
         WebElement element = driver.findElement(By.linkText("Administrate Loads"));
         element.click();
 
@@ -49,23 +50,16 @@ public class ReserveLoadSteps {
         RegisterLoad.registerLoad(driver, actualContent, actualHarbor, actualDestination);
     }
 
-    @When("^you reserve it$")
-    public void reserveLoad(){
+    @Then("^the load will be registered$")
+    public void loadShouldBeReserved(){
         WebElement element = driver.findElement(By.linkText("Show Loads"));
         element.click();
-        ReserveLoad.reserveLoad(actualContent,driver);
-        element = driver.findElement(By.linkText("Administrate Loads"));
-        element.click();
-    }
 
-    @Then("^the load will be reserved for you$")
-    public void loadShouldBeReserved(){
-        AssertTextWasFound.assertTextWasFound(driver, actualContent, actualHarbor, actualDestination);
-    }
+        AssertTextWasFound.assertTextWasFound(driver,actualContent,actualHarbor,actualDestination);
 
+    }
     @After
     public void tearDown(){
         driver.quit();
     }
-
 }
