@@ -26,7 +26,7 @@ public class ReserveLoadTest {
         driver.get("http://localhost:8080/LoadPlannerMain-1.0-SNAPSHOT");
     }
 
-    @Test
+
     public void reserveLoadTest(){
         String actualContent = "reservableContent";
         String actualHarbor ="Stockholm";

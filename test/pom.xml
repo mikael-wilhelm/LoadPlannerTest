@@ -12,6 +12,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     </properties>
+
     <dependencies>
 
         <dependency>
@@ -20,28 +21,49 @@
             <version>4.10</version>
             <scope>test</scope>
         </dependency>
+
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-java</artifactId>
             <version>2.20.0</version>
         </dependency>
+
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.10</version>
+            <scope>test</scope>
+        </dependency>
+
         <dependency>
             <groupId>se.ndi09mlf.exjob</groupId>
             <artifactId>LoadPlannerMain</artifactId>
             <version>1.0-SNAPSHOT</version>
             <type>war</type>
-
         </dependency>
 
+        <dependency>
+            <groupId>info.cukes</groupId>
+            <artifactId>cucumber-java</artifactId>
+            <version>1.0.4</version>
+        </dependency>
+
+        <dependency>
+            <groupId>info.cukes</groupId>
+            <artifactId>cucumber-junit</artifactId>
+            <version>1.0.4</version>
+        </dependency>
+
+        <dependency>
+            <groupId>postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+            <version>9.0-801.jdbc4</version>
+        </dependency>
 
     </dependencies>
 
-
     <build>
         <plugins>
-
-
-
 
             <plugin>
                 <groupId>org.codehaus.cargo</groupId>
@@ -56,18 +78,15 @@
                     </container>
                     <configuration>
                         <home>${project.build.directory}/tomcat7x</home>
-
                         <deployables>
                             <deployable>
                                 <groupId>se.ndi09mlf.exjob</groupId>
                                 <artifactId>LoadPlannerMain</artifactId>
                                 <type>war</type>
-
                             </deployable>
                         </deployables>
                     </configuration>
                 </configuration>
-
                 <executions>
                     <execution>
                         <id>start</id>
@@ -86,7 +105,6 @@
                 </executions>
             </plugin>
 
-
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
@@ -101,18 +119,13 @@
                             <goal>test</goal>
                         </goals>
                         <configuration>
-
                             <skip>false</skip>
                             <excludes><exclude>none</exclude></excludes>
                         </configuration>
-
                     </execution>
                 </executions>
             </plugin>
 
         </plugins>
-
     </build>
-
-
 </project>

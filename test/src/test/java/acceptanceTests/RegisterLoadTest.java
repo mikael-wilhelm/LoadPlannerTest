@@ -21,7 +21,7 @@ public class RegisterLoadTest {
         driver.get("http://localhost:8080/LoadPlannerMain-1.0-SNAPSHOT");
     }
 
-    @Test
+
     public void registerLoadTest(){
 
         String actualContent = "Cole";
